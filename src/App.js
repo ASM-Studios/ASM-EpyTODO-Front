@@ -1,22 +1,24 @@
 import './App.css'
+import axios from 'axios';
+import {
+    BrowserRouter as Router,
+    Routes,
+    Route
+} from "react-router-dom";
+import Login from "./pages/login"
+import HomePage from "./pages/homePage"
+import Register from "./pages/register"
 
-const getURL = "http://localhost:8080/get"
-
-function MyButton() {
+const App = () => {
     return (
-        <button>Click to get user list</button>
+        <Router>
+            <Routes>
+                <Route path="/" element={<HomePage />}/>
+                <Route path="/login" element={<Login />} />
+                <Route path="/register" element={<Register />} />
+            </Routes>
+        </Router>
     )
-}
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <t>Hello World!</t>
-        <MyButton />
-      </header>
-    </div>
-  )
 }
 
 export default App
