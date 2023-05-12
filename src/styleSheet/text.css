@@ -11,3 +11,8 @@
 .pixel {
     font-family: "CustomFont", sans-serif;
 }
+
+.pixelDark {
+    font-family: "CustomFont", sans-serif;
+    color: black;
+}

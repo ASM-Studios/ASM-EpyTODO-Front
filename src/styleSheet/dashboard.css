@@ -1,0 +1,30 @@
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 15vw;
+}
+
+.entity-rectangle {
+    border-radius: 0.5vw;
+    background-color: #3d7eb0;
+    color: white;
+    padding: 2.5vw;
+    margin-bottom: 2.5vw;
+    width: 15vw;
+    height: 10vw;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.center {
+    justify-content: center;
+}
+
+.entity-id, .entity-title {
+    font-family: "CustomFont", sans-serif;
+    margin: 0;
+    font-size: 0.8vw;
+}

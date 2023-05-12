@@ -1,3 +1,8 @@
+.Footer {
+    padding: 0;
+    margin: 0;
+}
+
 .Home-page-background {
     background-image: url('../assets/background/homePageBackground.png');
     background-repeat: no-repeat;
