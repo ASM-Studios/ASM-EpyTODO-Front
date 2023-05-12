@@ -5,3 +5,7 @@
     align-items: center;
     padding: 10px;
 }
+
+.left-align {
+    align-items: flex-end;
+}
