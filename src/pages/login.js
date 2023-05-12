@@ -1,30 +1,30 @@
-import React, { useState } from 'react'
+import React, { useState } from "react"
 import axios from "axios"
 import Cookies from "js-cookie"
 import { isEmail } from "../utils/checks"
-import '../styleSheet/App.css'
-import '../styleSheet/background.css'
-import '../styleSheet/button.css'
-import '../styleSheet/form.css'
-import '../styleSheet/register.css'
-import '../styleSheet/text.css'
+import "../styleSheet/App.css"
+import "../styleSheet/background.css"
+import "../styleSheet/button.css"
+import "../styleSheet/form.css"
+import "../styleSheet/register.css"
+import "../styleSheet/text.css"
 
 const Login = () => {
     const [errorMessage, setErrorMessage] = useState("")
     const loginURL = "http://localhost:8080/login"
     const dashboardURL = "http://localhost:3000/dashboard"
     const [formData, setFormData] = useState({
-        email: '',
-        password: '',
-        passwordConfirm: ''
+        email: "",
+        password: "",
+        passwordConfirm: ""
     })
 
     const resetForm = () => {
         setFormData({
-            email: '',
-            password: '',
-            passwordConfirm: ''
-        });
+            email: "",
+            password: "",
+            passwordConfirm: ""
+        })
     }
 
     const handleInputChange = (event) => {
@@ -54,7 +54,7 @@ const Login = () => {
                         setErrorMessage("Scrap, token wasn't provided")
                         return null
                     } else {
-                        Cookies.set('token', token)
+                        Cookies.set("token", token)
                         console.log("token is: " + token)
                         window.location.href = dashboardURL
                     }
@@ -88,4 +88,4 @@ const Login = () => {
         </div>
     )
 }
-export default Login;
+export default Login

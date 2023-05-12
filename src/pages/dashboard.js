@@ -1,7 +1,7 @@
 import { checkToken } from "../utils/checks"
 import Cookies from "js-cookie"
 import axios from "axios"
-import { useEffect, useState } from "react";
+import { useEffect, useState } from "react"
 import "../styleSheet/App.css"
 import "../styleSheet/background.css"
 import "../styleSheet/button.css"
@@ -9,21 +9,21 @@ import "../styleSheet/form.css"
 import "../styleSheet/text.css"
 import "../styleSheet/dashboard.css"
 
-const MyButton = ({ onClick, id, title }) => {
+const MyButton = ({ id, title }) => {
     const handler = () => {
         console.log(id, title)
-    };
+    }
 
     return (
         <button className="entity-rectangle" onClick={handler}>
             <p className="entity-id">{id}</p>
             <p className="entity-title">{title}</p>
         </button>
-    );
-};
+    )
+}
 
 const getAllTodo = () => {
-    const getTodoURL = "http://localfhost:8080/todos"
+    const getTodoURL = "http://localhost:8080/todos"
     const token = Cookies.get("token")
 
     return axios.get(getTodoURL, {
@@ -41,17 +41,17 @@ const getAllTodo = () => {
 }
 
 const Dashboard = () => {
-    checkToken();
-    const [values, setValues] = useState([]);
+    checkToken()
+    const [values, setValues] = useState([])
 
     useEffect(() => {
         getAllTodo().then((data) => {
-            setValues(data);
+            setValues(data)
         }).catch((error) => {
-            console.warn("Value empty")
-            setValues([{id: "-1", title: "Error"}]);
-        });
-    }, []);
+            console.error(error)
+            setValues([{id: "-1", title: "Error"}])
+        })
+    }, [])
 
     return (
         <div className={"Dashboard-page-background"}>
@@ -71,6 +71,6 @@ const Dashboard = () => {
             { null }
         </div>
     )
-};
+}
 
-export default Dashboard;
+export default Dashboard

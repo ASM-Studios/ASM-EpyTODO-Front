@@ -1,20 +1,19 @@
 import React from "react"
 import {Link} from "react-router-dom"
-import '../styleSheet/button.css'
+import "../styleSheet/button.css"
 import "../styleSheet/background.css"
-import "../styleSheet/homePage.css"
 
-function LoginButton() {
+const LoginButton = () => {
     return (
         <Link to={"/login"}>
-            <button className={"homeButton"}>Login</button>
+            <button className={"pixelBlueButton"}>Login</button>
         </Link>
 )}
 
-function RegisterButton() {
+const RegisterButton = () => {
     return (
         <Link to={"/register"}>
-            <button className={"homeButton"}>Register</button>
+            <button className={"pixelBlueButton"}>Register</button>
         </Link>
 )}
 
@@ -28,4 +27,4 @@ const HomePage = () => {
         </div>
 )}
 
-export default HomePage;
+export default HomePage

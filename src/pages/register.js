@@ -1,13 +1,13 @@
-import React, { useState } from 'react'
+import React, { useState } from "react"
 import axios from "axios"
 import Cookies from "js-cookie"
 import { isEmail } from "../utils/checks"
-import '../styleSheet/App.css'
-import '../styleSheet/background.css'
-import '../styleSheet/button.css'
-import '../styleSheet/form.css'
-import '../styleSheet/register.css'
-import '../styleSheet/text.css'
+import "../styleSheet/App.css"
+import "../styleSheet/background.css"
+import "../styleSheet/button.css"
+import "../styleSheet/form.css"
+import "../styleSheet/register.css"
+import "../styleSheet/text.css"
 
 
 
@@ -17,21 +17,21 @@ const Register = () => {
     const registerURL = "http://localhost:8080/register"
     const dashboardURL = "http://localhost:3000/dashboard"
     const [formData, setFormData] = useState({
-        email: '',
-        password: '',
-        passwordConfirm: '',
-        name: '',
-        firstname: ''
+        email: "",
+        password: "",
+        passwordConfirm: "",
+        name: "",
+        firstname: ""
     })
 
     const resetForm = () => {
         setFormData({
-            email: '',
-            password: '',
-            passwordConfirm: '',
-            name: '',
-            firstname: ''
-        });
+            email: "",
+            password: "",
+            passwordConfirm: "",
+            name: "",
+            firstname: ""
+        })
     }
 
 
@@ -64,7 +64,7 @@ const Register = () => {
                     setErrorMessage("Scrap, token wasn't provided")
                     return null
                 } else {
-                        Cookies.set('token', token)
+                        Cookies.set("token", token)
                         window.location.href = dashboardURL
                     }
                 }).catch(error => {
