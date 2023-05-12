@@ -1,4 +1,4 @@
-.container {
+.buttonContainer {
     display: flex;
 }
 
@@ -21,7 +21,7 @@
 }
 
 .buttonBlue {
-    background-color:#7892c2;
+    background-color:#637ca8;
     border-radius:2px;
     display:inline-block;
     cursor:pointer;
@@ -30,15 +30,15 @@
     font-weight:bold;
     padding:20px 50px;
     text-decoration:none;
-    border: 1px solid #7892c2;
+    border: 1px solid #637ca8;
     flex: 1;
     width: 200px;
     height: 75px;
 }
 
 .buttonBlue:hover {
-    background-color:#476e9e;
-    border: 1px solid #476e9e;
+    background-color:#37567d;
+    border: 1px solid #37567d;
 }
 
 .buttonBlue:active {

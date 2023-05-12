@@ -1,0 +1,15 @@
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    width: 200px;
+}
+
+input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 5px;
+    margin-bottom: 10px;
+}
