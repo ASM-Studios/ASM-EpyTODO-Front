@@ -1,47 +1,79 @@
 import React, { useState } from 'react'
-// import {Link} from "react-router-dom"
-// import ReactDOM from 'react-dom/client'
-// import axios from "axios";
+import axios from "axios"
+import Cookies from "js-cookie"
 import '../styleSheet/App.css'
 import '../styleSheet/background.css'
 import '../styleSheet/button.css'
 import '../styleSheet/form.css'
 import '../styleSheet/register.css'
+import '../styleSheet/text.css'
 
 
+const isEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    return emailRegex.test(email)
+}
 
-function Register() {
-    let error = "None"
+const Register = () => {
+    const [errorMessage, setErrorMessage] = useState("")
+    const registerURL = "http://localhost:8080/register"
     const [formData, setFormData] = useState({
         email: '',
         password: '',
         passwordConfirm: '',
         name: '',
         firstname: ''
-    });
+    })
 
     const handleInputChange = (event) => {
-        const { name, value } = event.target;
+        const { name, value } = event.target
         setFormData((prevState) => ({ ...prevState, [name]: value }))
-    };
+    }
 
     const RegisterButton = () => {
         const createUser = () => {
-            console.table(formData.email, formData.password, formData.name, formData.firstname)
-            if (formData.password !== formData.passwordConfirm) {
-                error = "password"
+            if (!formData.email || !formData.password || !formData.passwordConfirm || !formData.name || ! formData.firstname) {
+                setErrorMessage("All field must be complete.")
                 return null
+            } else if (formData.password !== formData.passwordConfirm) {
+                setErrorMessage("Password do not match.")
+                return null
+            } else if (!isEmail(formData.email)) {
+                setErrorMessage("Please enter a valid email address.")
+                return null
+            } else {
+                const payload = {
+                    email: formData.email,
+                    password: formData.password,
+                    name: formData.name,
+                    firstname: formData.firstname
+                }
+                axios.post(registerURL, payload).then(response => {
+                    const token = response.data.token
+                    if (!token) {
+                    setErrorMessage("Scrap, token wasn't provided")
+                    return null
+                } else {
+                        Cookies.set('token', token, { sameSite: 'lax', secure: true })
+                    }
+                }).catch(error => {
+                    setErrorMessage("Scrap, something went wrong: " + error.response.data.msg)
+                    console.error(error)
+                })
+                setErrorMessage("")
             }
         }
         return (
             <button className={"registerButton"} onClick={createUser}>Register</button>
-        )}
-
+        )
+    }
     return (
         <div className="Register-page-background">
-            <h1>Register Now</h1>
-            <h3>Get a free hug</h3>
+            <h1> </h1>
+            <h3> </h3>
+            <h3> </h3>
             <br/><br/>
+            {errorMessage && <p className="error">{errorMessage}</p>}
             <form className={"form"}>
                 <label className={"label"}>Email:
                     <input className={"input"} name="email" type="email" value={formData.email} onChange={handleInputChange} />
@@ -61,6 +93,6 @@ function Register() {
             </form>
             <RegisterButton />
         </div>
-    );
+    )
 }
-export default Register;
+export default Register

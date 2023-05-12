@@ -39,32 +39,23 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+## Back-End
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+You will find a back end for this project on the repository [ASM-EpyTODO](https://github.com/ASM-Studios/ASM-EpyTODO)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+---
+### REPORTING BUGS:
+> There is no bug
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+# THE TEAM:
 
-### Making a Progressive Web App
+| [<img src="https://github.com/Mael-RABOT.png?size=85" width=85><br><sub>Maël RABOT</sub>](https://github.com/Mael-RABOT) | [<img src="https://github.com/Cadavre-chan.png?size=85" width=85><br><sub>Axel CHYPRE</sub>](https://github.com/Cadavre-chan) | [<img src="https://github.com/Popochounet.png?size=85" width=85><br><sub>Adrien AUDRIAD</sub>](https://github.com/Popochounet) |
+|:---:|:---:|:--------------------------------------------------------------------------------------------------------------------------:|
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+<br/><br/>
+<img src="https://newsroom.ionis-group.com/wp-content/uploads/2021/10/EPITECH-TECHNOLOGY-QUADRI-2021.png" alt="Epitech Technology Logo" title="Epitech Technology Logo" width=300 height=100>
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
