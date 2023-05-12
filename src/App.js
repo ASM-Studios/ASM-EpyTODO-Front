@@ -1,9 +1,8 @@
-import './styleSheet/App.css'
 import {
     BrowserRouter as Router,
     Routes,
     Route
-} from "react-router-dom";
+} from "react-router-dom"
 import Footer from "./footer"
 import Header from "./header"
 import Login from "./pages/login"

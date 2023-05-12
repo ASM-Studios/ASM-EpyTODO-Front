@@ -1,4 +1,4 @@
-function Footer() {
+const Footer = () => {
     return (
         <footer>
             <p>Check out more content on
