@@ -1,29 +1,29 @@
 import React from "react"
-import '../button.css'
 import {Link} from "react-router-dom"
+import '../styleSheet/button.css'
+import "../styleSheet/background.css"
 
 function LoginButton() {
     return (
         <Link to={"/login"}>
-            <button className={"buttonGreen"}>Login</button>
+            <button className={"buttonBlue"}>Login</button>
         </Link>
 )}
 
 function RegisterButton() {
     return (
         <Link to={"/register"}>
-            <button className={"buttonGreen"}>Register</button>
+            <button className={"buttonBlue"}>Register</button>
         </Link>
 )}
 
 const HomePage = () => {
     return (
-        <div className="App-header">
-            <h2>Home Page</h2>
-            <br />
-            <br />
-            <LoginButton />
-            <RegisterButton />
+        <div className={"Home-page-background"}>
+            <div className={"buttonContainer"}>
+                <RegisterButton />
+                <LoginButton />
+            </div>
         </div>
 )}
 

@@ -1,5 +1,4 @@
-import './App.css'
-import axios from 'axios';
+import './styleSheet/App.css'
 import {
     BrowserRouter as Router,
     Routes,
