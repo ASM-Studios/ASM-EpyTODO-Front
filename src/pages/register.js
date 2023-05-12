@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import axios from "axios"
 import Cookies from "js-cookie"
+import { isEmail } from "../utils/checks"
 import '../styleSheet/App.css'
 import '../styleSheet/background.css'
 import '../styleSheet/button.css'
@@ -9,10 +10,7 @@ import '../styleSheet/register.css'
 import '../styleSheet/text.css'
 
 
-const isEmail = (email) => {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-    return emailRegex.test(email)
-}
+
 
 const Register = () => {
     const [errorMessage, setErrorMessage] = useState("")
@@ -25,6 +23,17 @@ const Register = () => {
         name: '',
         firstname: ''
     })
+
+    const resetForm = () => {
+        setFormData({
+            email: '',
+            password: '',
+            passwordConfirm: '',
+            name: '',
+            firstname: ''
+        });
+    }
+
 
     const handleInputChange = (event) => {
         const { name, value } = event.target
@@ -55,7 +64,7 @@ const Register = () => {
                     setErrorMessage("Scrap, token wasn't provided")
                     return null
                 } else {
-                        Cookies.set('token', token, { sameSite: 'lax', secure: true })
+                        Cookies.set('token', token)
                         window.location.href = dashboardURL
                     }
                 }).catch(error => {
@@ -63,6 +72,7 @@ const Register = () => {
                     console.error(error)
                 })
                 setErrorMessage("")
+                resetForm()
             }
         }
         return (
