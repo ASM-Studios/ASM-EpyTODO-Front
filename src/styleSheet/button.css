@@ -45,3 +45,30 @@
     position:relative;
     top:1px;
 }
+
+.pixelBlueButton {
+    background-color:#637ca8;
+    border-radius:2px;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family: "CustomFont", sans-serif;
+    font-size:17px;
+    font-weight:bold;
+    padding:20px 50px;
+    text-decoration:none;
+    border: 1px solid #637ca8;
+    flex: 1;
+    width: 200px;
+    height: 75px;
+}
+
+.pixelBlueButton:hover {
+    background-color:#37567d;
+    border: 1px solid #37567d;
+}
+
+.pixelBlueButton:active {
+    position:relative;
+    top:1px;
+}

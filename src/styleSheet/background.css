@@ -32,7 +32,8 @@
 .Dashboard-page-background {
     background-image: url('../assets/background/dashboardPageBackground.png');
     background-repeat: no-repeat;
-    background-size: cover;
+    background-position-x: center;
+    background-size: 100% auto;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
