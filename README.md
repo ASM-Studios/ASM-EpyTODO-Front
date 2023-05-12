@@ -3,7 +3,9 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
-
+<details>
+<summary>See the scripts here</summary>
+<br/>
 In the project directory, you can run:
 
 ### `npm install`
@@ -42,6 +44,16 @@ If you aren't satisfied with the build tool and configuration choices, you can `
 Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+
+</details>
+
+## Deployement
+
+This app is also being deploy on [netlify](https://www.netlify.com/)<br/>
+You can find it here [ASM-Epytodo-Front](https://asm-epytodo-front.netlify.app/)<br/>
+[![Netlify Status](https://api.netlify.com/api/v1/badges/e33d54b4-468b-4674-a31f-8a1c320d0290/deploy-status)](https://app.netlify.com/sites/asm-epytodo-front/deploys)
+
+/!\ The backend isn't currently deploy, and still need to be launch manually
 
 ## Back-End
 
