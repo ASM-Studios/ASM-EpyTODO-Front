@@ -1,4 +1,4 @@
-import { checkToken } from "../utils/checks"
+//import { checkToken } from "../utils/checks"
 import Cookies from "js-cookie"
 import axios from "axios"
 import { useEffect, useState } from "react"
