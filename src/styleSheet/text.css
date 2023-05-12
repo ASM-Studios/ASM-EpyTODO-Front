@@ -1,3 +1,13 @@
+@font-face {
+    font-family: "CustomFont";
+    src: url('../assets/font/FFFFORWA.TTF') format("truetype");
+}
+
 .error {
+    font-family: "CustomFont", sans-serif;
     color: red;
+}
+
+.pixel {
+    font-family: "CustomFont", sans-serif;
 }
