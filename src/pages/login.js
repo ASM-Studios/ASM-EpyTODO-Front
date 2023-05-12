@@ -40,30 +40,35 @@ const Login = () => {
             } else if (formData.password !== formData.passwordConfirm) {
                 setErrorMessage("Password do not match.")
                 return null
-            } else if (!isEmail(formData.email)) {
-                setErrorMessage("Please enter a valid email address.")
-                return null
             } else {
-                const payload = {
-                    email: formData.email,
-                    password: formData.password
-                }
-                axios.post(loginURL, payload).then(response => {
-                    const token = response.data.token
-                    if (!token) {
-                        setErrorMessage("Scrap, token wasn't provided")
-                        return null
-                    } else {
-                        Cookies.set("token", token)
-                        console.log("token is: " + token)
-                        window.location.href = dashboardURL
+                if (!isEmail(formData.email)) {
+                    setErrorMessage("Please enter a valid email address.")
+                    return null
+                } else {
+                    const payload = {
+                        email: formData.email,
+                        password: formData.password
                     }
-                }).catch(error => {
-                    setErrorMessage("Scrap, something went wrong: " + error.response.data.msg)
-                    console.error(error)
-                })
-                setErrorMessage("")
-                resetForm()
+                    axios.post(loginURL, payload).then(response => {
+                        const token = response.data.token
+                        if (!token) {
+                            setErrorMessage("Scrap, token wasn't provided")
+                            return null
+                        } else {
+                            Cookies.set("token", token)
+                            if (window.location.hostname === 'localhost') {
+                                window.location.href = dashboardURL
+                            } else {
+                                window.location.href = 'https://main--asm-epytodo-front.netlify.app/dashboard';
+                            }
+                        }
+                    }).catch(error => {
+                        setErrorMessage("Scrap, something went wrong: " + error.response.data.msg)
+                        console.error(error)
+                    })
+                    setErrorMessage("")
+                    resetForm()
+                }
             }
         }
         return (

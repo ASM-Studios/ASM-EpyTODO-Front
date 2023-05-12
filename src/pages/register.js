@@ -65,7 +65,11 @@ const Register = () => {
                     return null
                 } else {
                         Cookies.set("token", token)
-                        window.location.href = dashboardURL
+                        if (window.location.hostname === 'localhost') {
+                            window.location.href = dashboardURL
+                        } else {
+                            window.location.href = 'https://main--asm-epytodo-front.netlify.app/dashboard';
+                        }
                     }
                 }).catch(error => {
                     setErrorMessage("Scrap, something went wrong: " + error.response.data.msg)

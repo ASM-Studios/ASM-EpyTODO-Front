@@ -4,9 +4,12 @@ import "./styleSheet/header.css"
 import Modal from "react-modal"
 
 const Header = () => {
-    const profileURL = "http://localhost:3000/profile"
     const location = useLocation()
     const showHeader = ["/dashboard"].includes(location.pathname)
+
+    const profileURL = window.location.hostname === 'localhost'
+        ? 'http://localhost:3000/profile'
+        : 'https://main--asm-epytodo-front.netlify.app/profile'
 
     const ProfileButton = () => {
         const [showProfile, setShowProfile] = useState(false)
