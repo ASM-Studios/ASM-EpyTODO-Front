@@ -41,7 +41,7 @@ const getAllTodo = () => {
 }
 
 const Dashboard = () => {
-    checkToken()
+    //checkToken()
     const [values, setValues] = useState([])
 
     useEffect(() => {
