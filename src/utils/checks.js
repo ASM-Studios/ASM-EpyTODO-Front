@@ -6,7 +6,7 @@ const isEmail = (email) => {
 }
 
 const checkToken = (defaultURL = "http://localhost:3000") => {
-    const token = Cookies.get('token');
+    const token = Cookies.get("token");
 
     if (!token) {
         window.location.href = defaultURL;
