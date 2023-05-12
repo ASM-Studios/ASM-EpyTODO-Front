@@ -17,6 +17,7 @@ const isEmail = (email) => {
 const Register = () => {
     const [errorMessage, setErrorMessage] = useState("")
     const registerURL = "http://localhost:8080/register"
+    const dashboardURL = "http://localhost:3000/dashboard"
     const [formData, setFormData] = useState({
         email: '',
         password: '',
@@ -55,6 +56,7 @@ const Register = () => {
                     return null
                 } else {
                         Cookies.set('token', token, { sameSite: 'lax', secure: true })
+                        window.location.href = dashboardURL
                     }
                 }).catch(error => {
                     setErrorMessage("Scrap, something went wrong: " + error.response.data.msg)
