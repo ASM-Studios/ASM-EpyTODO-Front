@@ -26,15 +26,15 @@ const Header = () => {
                 backgroundColor: "rgba(0, 0, 0, 0.5)"
             },
             content: {
-                backgroundColor: "white",
+                backgroundColor: "#92c0e3",
                 border: "none",
                 top: "50%",
                 left: "50%",
                 right: "auto",
                 bottom: "auto",
                 transform: "translate(-50%, -50%)",
-                width: "90%",
-                height: "90%",
+                width: "40%",
+                height: "40%",
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
@@ -52,7 +52,7 @@ const Header = () => {
                     onRequestClose={handleCloseModal}
                     style={modalStyle}
                 >
-                    <iframe src={profileURL} width="100%" height="100%"></iframe>
+                    <iframe title={"profileIframe"} src={profileURL} width="100%" height="100%"></iframe>
                 </Modal>
             </div>
         )
