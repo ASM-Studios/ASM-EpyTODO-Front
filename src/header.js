@@ -61,9 +61,18 @@ const Header = () => {
         )
     }
 
+    const HomeButton = () => {
+        const homeHandler = () => {
+            window.location.href = "/"
+        }
+        return (
+            <button className={"pixelBlueButton"} onClick={homeHandler}>Epytodo</button>
+        )
+    }
+
     return showHeader ? (
         <header className="header">
-            <h1 className="pixelDark">ASM - Epytodo</h1>
+            <HomeButton />
             <ProfileButton />
         </header>
     ) : null
