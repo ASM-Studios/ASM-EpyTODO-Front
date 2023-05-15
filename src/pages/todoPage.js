@@ -35,7 +35,7 @@ const Todo = () => {
     }, [id])
 
     return (
-        <div className={"App-center"}>
+        <div className={"App-header"}>
             <h1 className={"pixelDark"}>Todo {id}</h1>
             {data &&
                 <>

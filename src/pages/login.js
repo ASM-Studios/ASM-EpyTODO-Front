@@ -26,6 +26,22 @@ const Login = () => {
         })
     }
 
+    const setIdByEmail = (email, token) => {
+        const getIdURL = "http://localhost:8080/users/"
+
+        return axios.get(getIdURL + email, {
+            headers: {
+                "Content-Type": `application/json`,
+                "Authorization": `Bearer ${token}`
+            }
+        }).then(response => {
+            console.warn("id = " + response.data.id)
+            Cookies.set("id", response.data.id)
+        }).catch(error => {
+            console.error(error)
+        })
+    }
+
     const handleInputChange = (event) => {
         const { name, value } = event.target
         setFormData((prevState) => ({ ...prevState, [name]: value }))
@@ -55,10 +71,15 @@ const Login = () => {
                             return null
                         } else {
                             Cookies.set("token", token)
+                            setIdByEmail(formData.email, token)
                             window.location.href = "/dashboard"
                         }
                     }).catch(error => {
-                        setErrorMessage("Scrap, something went wrong: " + error.response.data.msg)
+                        try {
+                            setErrorMessage("Scrap, something went wrong: " + error.response.data.msg)
+                        } catch (error) {
+                            setErrorMessage("Scrap, something went wrong")
+                        }
                         console.error(error)
                     })
                     setErrorMessage("")
