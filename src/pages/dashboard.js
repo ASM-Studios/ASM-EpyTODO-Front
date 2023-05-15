@@ -2,6 +2,7 @@ import { checkToken } from "../utils/checks"
 import Cookies from "js-cookie"
 import axios from "axios"
 import { useEffect, useState } from "react"
+import TodoModal from "../utils/todoModals"
 import "../styleSheet/App.css"
 import "../styleSheet/background.css"
 import "../styleSheet/button.css"
@@ -10,15 +11,8 @@ import "../styleSheet/text.css"
 import "../styleSheet/dashboard.css"
 
 const MyButton = ({ id, title }) => {
-    const handler = () => {
-        console.log(id, title)
-    }
-
     return (
-        <button className="entity-rectangle" onClick={handler}>
-            <p className="entity-id">{id}</p>
-            <p className="entity-title">{title}</p>
-        </button>
+        <TodoModal id={id} title={title}/>
     )
 }
 

@@ -12,7 +12,6 @@ import "../styleSheet/text.css"
 const Login = () => {
     const [errorMessage, setErrorMessage] = useState("")
     const loginURL = "http://localhost:8080/login"
-    const dashboardURL = "http://localhost:3000/dashboard"
     const [formData, setFormData] = useState({
         email: "",
         password: "",

@@ -15,7 +15,6 @@ import "../styleSheet/text.css"
 const Register = () => {
     const [errorMessage, setErrorMessage] = useState("")
     const registerURL = "http://localhost:8080/register"
-    const dashboardURL = "http://localhost:3000/dashboard"
     const [formData, setFormData] = useState({
         email: "",
         password: "",
