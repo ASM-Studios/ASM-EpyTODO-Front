@@ -1,14 +1,16 @@
 import { checkToken } from "../utils/checks"
-import DeleteModal from "../utils/DeleteModal"
-import UpdateUserModal from "../utils/updateUserModal"
+import UpdateUserModal from "../modals/updateUserModal"
 const  Cookie = require("js-cookie")
 
 const Profile = () => {
     checkToken()
 
     const DeleteUser = ({ id }) => {
+        const deleteHandler = () => {
+            console.log("Delete user: " + id)
+        }
         return (
-            <DeleteModal id={id}/>
+            <button className={"pixelBlueButton"} onClick={deleteHandler}>Delete</button>
         )
     }
 
