@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import Cookies from 'js-cookie'
-import "./styleSheet/App.css"
-import "./styleSheet/background.css"
-import "./styleSheet/button.css"
-import "./styleSheet/form.css"
-import "./styleSheet/text.css"
-import "./styleSheet/dashboard.css"
+import "../styleSheet/App.css"
+import "../styleSheet/background.css"
+import "../styleSheet/button.css"
+import "../styleSheet/form.css"
+import "../styleSheet/text.css"
+import "../styleSheet/dashboard.css"
 
 const Todo = () => {
 

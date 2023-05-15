@@ -10,7 +10,7 @@ import HomePage from "./pages/homePage"
 import Register from "./pages/register"
 import Dashboard from "./pages/dashboard"
 import Profile from "./pages/profile"
-import Todo from "./todoPage"
+import Todo from "./pages/todoPage"
 
 const App = () => {
     return (
