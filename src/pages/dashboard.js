@@ -61,7 +61,7 @@ const Dashboard = () => {
             ) :
             <div>
                 <h1 className={"pixelDark"}>Be happy, you have nothing to do</h1>
-                <p className={"pixelDark"}>(or you are not link to the db, in that case, stop being happy)</p>
+                <p className={"pixelDark"}>(or you are not linked to the db, in that case, stop being happy)</p>
             </div>
             }
             { null }

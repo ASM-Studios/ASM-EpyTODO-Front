@@ -98,6 +98,10 @@ const Login = () => {
 
     return (
         <div className="Register-page-background">
+            <h1 className={"pixelDark"}>Login</h1>
+            <h3> </h3>
+            <h3> </h3>
+            <br/><br/>
             {errorMessage && <p className="error">{errorMessage}</p>}
             <form className={"form"}>
                 <label className={"label"}>Email:
@@ -114,4 +118,5 @@ const Login = () => {
         </div>
     )
 }
+
 export default Login

@@ -20,6 +20,9 @@ const RegisterButton = () => {
 const HomePage = () => {
     return (
         <div className={"Home-page-background"}>
+            <div className={"App"}>
+                <h1 className={"pixelDark"}>Epytodo</h1>
+            </div>
             <div className={"buttonContainer"}>
                 <RegisterButton />
                 <LoginButton />

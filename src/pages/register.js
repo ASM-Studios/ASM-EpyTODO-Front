@@ -104,7 +104,7 @@ const Register = () => {
     }
     return (
         <div className="Register-page-background">
-            <h1> </h1>
+            <h1 className={"pixelDark"}>Register</h1>
             <h3> </h3>
             <h3> </h3>
             <br/><br/>
