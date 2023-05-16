@@ -1,20 +1,35 @@
 import { checkToken } from "../utils/checks"
 import UpdateUserModal from "../modals/updateUserModal"
-//const  Cookie = require("js-cookie")
+import axios from "axios";
+import Cookies from "js-cookie";
+const  Cookie = require("js-cookie")
 
 const Profile = () => {
     checkToken()
+    const id = Cookie.get("id")
+    const deleteURL = "http://localhost:8080/users/"
 
-    const DeleteUser = ({ id }) => {
+    const DeleteUser = () => {
         const deleteHandler = () => {
-            console.log("Delete user: " + id)
+            axios.delete(deleteURL + id, {
+                headers: {
+                    "Content-Type": `application/json`,
+                    Authorization: `Bearer ${Cookies.get("token")}`
+                }
+            }).then(response => {
+                console.log(response)
+                Cookies.remove("token")
+                Cookies.remove("id")
+            }).catch(error => {
+                console.error(error)
+            })
         }
         return (
             <button className={"pixelBlueButton"} onClick={deleteHandler}>Delete</button>
         )
     }
 
-    const UpdateUser = ({ id }) => {
+    const UpdateUser = () => {
         return (
             <UpdateUserModal id={id}></UpdateUserModal>
         )
