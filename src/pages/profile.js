@@ -1,6 +1,6 @@
 import { checkToken } from "../utils/checks"
 import UpdateUserModal from "../modals/updateUserModal"
-const  Cookie = require("js-cookie")
+//const  Cookie = require("js-cookie")
 
 const Profile = () => {
     checkToken()

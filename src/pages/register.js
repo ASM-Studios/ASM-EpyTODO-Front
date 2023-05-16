@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import axios from "axios"
 import Cookies from "js-cookie"
 import { isEmail } from "../utils/checks"
+import { useNavigate } from "react-router-dom"
 import "../styleSheet/App.css"
 import "../styleSheet/background.css"
 import "../styleSheet/button.css"
@@ -34,6 +35,7 @@ const Register = () => {
     }
 
     const setIdByEmail = (email, token) => {
+        Cookies.set("nothing", "nothing")
         const getIdURL = "http://localhost:8080/users/"
 
         return axios.get(getIdURL + email, {
@@ -54,6 +56,9 @@ const Register = () => {
     }
 
     const RegisterButton = () => {
+
+        const navigate = useNavigate()
+
         const createUser = () => {
             if (!formData.email || !formData.password || !formData.passwordConfirm || !formData.name || ! formData.firstname) {
                 setErrorMessage("All field must be complete.")
@@ -79,7 +84,7 @@ const Register = () => {
                 } else {
                         Cookies.set("token", token)
                         setIdByEmail(formData.email, token)
-                        window.location.href = "/dashboard"
+                        navigate("/dashboard")
                     }
                 }).catch(error => {
                     try {

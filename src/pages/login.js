@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import axios from "axios"
 import Cookies from "js-cookie"
 import { isEmail } from "../utils/checks"
+import { useNavigate } from 'react-router-dom'
 import "../styleSheet/App.css"
 import "../styleSheet/background.css"
 import "../styleSheet/button.css"
@@ -27,6 +28,7 @@ const Login = () => {
     }
 
     const setIdByEmail = (email, token) => {
+        Cookies.set("nothing", "nothing")
         const getIdURL = "http://localhost:8080/users/"
 
         return axios.get(getIdURL + email, {
@@ -48,6 +50,8 @@ const Login = () => {
     }
 
     const LoginButton = () => {
+        const navigate = useNavigate()
+
         const createUser = () => {
             if (!formData.email || !formData.password || !formData.passwordConfirm) {
                 setErrorMessage("All field must be complete.")
@@ -72,7 +76,7 @@ const Login = () => {
                         } else {
                             Cookies.set("token", token)
                             setIdByEmail(formData.email, token)
-                            window.location.href = "/dashboard"
+                            navigate("/dashboard")
                         }
                     }).catch(error => {
                         try {
@@ -88,9 +92,10 @@ const Login = () => {
             }
         }
         return (
-            <button className={"registerButton"} onClick={createUser}>Register</button>
+            <button className={"registerButton"} onClick={createUser}>Login</button>
         )
     }
+
     return (
         <div className="Register-page-background">
             {errorMessage && <p className="error">{errorMessage}</p>}

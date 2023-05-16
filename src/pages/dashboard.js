@@ -3,6 +3,7 @@ import Cookies from "js-cookie"
 import axios from "axios"
 import { useEffect, useState } from "react"
 import TodoModal from "../modals/todoModals"
+import CreateTodoModal from "../modals/newTodoModal"
 import "../styleSheet/App.css"
 import "../styleSheet/background.css"
 import "../styleSheet/button.css"
@@ -50,6 +51,7 @@ const Dashboard = () => {
     return (
         <div className={"Dashboard-page-background"}>
             <h1 className={"pixelDark"}>Dashboard</h1>
+            <CreateTodoModal />
             {values && values.length > 0 ? (
                 <div className="dashboard-container">
                     {values.map((entity, index) => (

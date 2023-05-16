@@ -1,18 +1,17 @@
 import React, { useState } from "react"
 import Modal from "react-modal"
-import "../styleSheet/modal.css"
 
-const DeleteModal = ( {id}) => {
-    const [showUpdate, setShowUpdate] = useState(false)
-    //const updateURL = "/update/"
+const NewTodoModal = () => {
+    const [showNewTodo, setShowNewTodo] = useState(false)
+    const newTodoURL = "/createTodo"
 
     const handleOpenModal = () => {
-        setShowUpdate(true)
+        setShowNewTodo(true)
         document.body.style.overflow = "hidden"
     }
 
     const handleCloseModal = () => {
-        setShowUpdate(false)
+        setShowNewTodo(false)
         document.body.style.overflow = "auto"
     }
 
@@ -28,8 +27,8 @@ const DeleteModal = ( {id}) => {
             right: "auto",
             bottom: "auto",
             transform: "translate(-50%, -50%)",
-            width: "90%",
-            height: "90%",
+            width: "40%",
+            height: "80%",
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
@@ -40,17 +39,17 @@ const DeleteModal = ( {id}) => {
     return (
         <div>
             <button className={"pixelBlueButton"} onClick={handleOpenModal}>
-                <h1 className={"modal-title"}>Update</h1>
+                <h1 className={"entity-title"}>+ task</h1>
             </button>
             <Modal
-                isOpen={showUpdate}
+                isOpen={showNewTodo}
                 onRequestClose={handleCloseModal}
                 style={modalStyle}
             >
-                <iframe title={"profileIframe"} src={setShowUpdate + id} width="100%" height="100%"></iframe>
+                <iframe title={"profileIframe"} src={newTodoURL} width="100%" height="100%"></iframe>
             </Modal>
         </div>
     )
 }
 
-export default DeleteModal
+export default NewTodoModal
