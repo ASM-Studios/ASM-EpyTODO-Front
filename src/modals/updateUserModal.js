@@ -28,7 +28,7 @@ const DeleteModal = ( {id}) => {
             right: "auto",
             bottom: "auto",
             transform: "translate(-50%, -50%)",
-            width: "90%",
+            width: "60%",
             height: "90%",
             display: "flex",
             justifyContent: "center",
