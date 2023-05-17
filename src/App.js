@@ -13,6 +13,7 @@ import Profile from "./pages/profile"
 import Todo from "./pages/todoPage"
 import Update from "./pages/updateUser"
 import CreateTodo from "./pages/createTodo"
+import UpdateTodo from "./pages/updateTodo"
 
 const App = () => {
     return (
@@ -27,6 +28,7 @@ const App = () => {
                 <Route path="/todos/:id" element={<Todo />} />
                 <Route path="/update/:id" element={<Update />} />
                 <Route path="/createTodo" element={<CreateTodo />} />
+                <Route path="/updateTodo/:id" element={<UpdateTodo />} />
             </Routes>
             <Footer />
         </Router>

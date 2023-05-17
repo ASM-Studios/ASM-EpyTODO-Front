@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import Cookies from 'js-cookie'
+import UpdateTodoModal from "../modals/updateTodoModal"
 import "../styleSheet/App.css"
 import "../styleSheet/background.css"
 import "../styleSheet/button.css"
@@ -39,15 +40,17 @@ const Todo = () => {
             <h1 className={"pixelDark"}>Todo {id}</h1>
             {data &&
                 <>
-                    <p className={"pixel"}>id: {data.id}</p>
                     <p className={"pixel"}>title: {data.title}</p>
                     <p className={"pixel"}>description: {data.description}</p>
-                    <p className={"pixel"}>created_at: {data.created_at}</p>
-                    <p className={"pixel"}>due_time: {data.due_time}</p>
+                    <p className={"pixel"}>From: {data.created_at}</p>
+                    <p className={"pixel"}>To: {data.due_time}</p>
                     <p className={"pixel"}>status: {data.status}</p>
-                    <p className={"pixel"}>user_id: {data.user_id}</p>
+                    <p className={"pixel"}>user id: {data.user_id}</p>
                 </>
             }
+            <div>
+                <UpdateTodoModal id={id}/>
+            </div>
         </div>
     )
 }

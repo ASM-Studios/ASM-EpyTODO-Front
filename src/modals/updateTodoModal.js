@@ -2,9 +2,9 @@ import React, { useState } from "react"
 import Modal from "react-modal"
 import "../styleSheet/modal.css"
 
-const DeleteModal = ( {id}) => {
+const UpdateTodoModal = ( {id} ) => {
     const [showUpdate, setShowUpdate] = useState(false)
-    const updateURL = "/update/"
+    const updateTodoURL = "/updateTodo/"
 
     const handleOpenModal = () => {
         setShowUpdate(true)
@@ -28,7 +28,7 @@ const DeleteModal = ( {id}) => {
             right: "auto",
             bottom: "auto",
             transform: "translate(-50%, -50%)",
-            width: "90%",
+            width: "40%",
             height: "90%",
             display: "flex",
             justifyContent: "center",
@@ -47,10 +47,10 @@ const DeleteModal = ( {id}) => {
                 onRequestClose={handleCloseModal}
                 style={modalStyle}
             >
-                <iframe title={"profileIframe"} src={updateURL + id} width="100%" height="100%"></iframe>
+                <iframe title={"profileIframe"} src={updateTodoURL + id} width="100%" height="100%"></iframe>
             </Modal>
         </div>
     )
 }
 
-export default DeleteModal
+export default UpdateTodoModal

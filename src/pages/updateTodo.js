@@ -3,11 +3,12 @@ import React, {useState} from "react"
 import Cookies from "js-cookie"
 import axios from "axios"
 
-const CreateTodo = () => {
+const UpdateTodo = () => {
     checkToken()
     const [errorMessage, setErrorMessage] = useState("")
-    const id = Cookies.get("id")
-    const createURL = "http://localhost:8080/todos"
+    const id = window.location.pathname.split("/").pop()
+    console.log("todo id: " + id)
+    const UpdateTodoURL = "http://localhost:8080/todos/"
     const [selectedOption, setSelectedOption] = useState("");
     const [formData, setFormData] = useState({
         title: "",
@@ -31,7 +32,7 @@ const CreateTodo = () => {
         setFormData((prevState) => ({ ...prevState, [name]: value }))
     }
 
-    const CreateButton = () => {
+    const UpdateButton = () => {
         const createHandler = () => {
             if (formData.title === "" || formData.description === "" || formData.due_date === "" || formData.due_time === "" || selectedOption === "") {
                 setErrorMessage("Please fill all the fields")
@@ -43,15 +44,16 @@ const CreateTodo = () => {
                 description: formData.description,
                 due_time: date,
                 status: selectedOption,
-                user_id: id
+                user_id: Cookies.get("id")
             }
-            axios.post(createURL, payload, {
+            axios.put(UpdateTodoURL + id, payload, {
                 headers: {
                     "Content-Type": `application/json`,
                     Authorization: `Bearer ${Cookies.get("token")}`
                 }
             }).then(response => {
                 console.log(response)
+                setErrorMessage("")
                 resetForm()
             }).catch(error => {
                 console.error(error)
@@ -59,13 +61,13 @@ const CreateTodo = () => {
             })
         }
         return (
-            <button className={"pixelBlueButton"} onClick={createHandler}>Create</button>
+            <button className={"pixelBlueButton"} onClick={createHandler}>Confirm</button>
         )
     }
 
     return (
         <div className={"App-header"}>
-            <h1 className={"pixel"}>Create a task</h1>
+            <h1 className={"pixel"}>Update</h1>
             {errorMessage && <p className="error">{errorMessage}</p>}
             <div className={"App-center"}>
                 <form>
@@ -92,11 +94,11 @@ const CreateTodo = () => {
                 </form>
                 <p></p>
                 <div>
-                    <CreateButton />
+                    <UpdateButton />
                 </div>
             </div>
         </div>
     )
 }
 
-export default CreateTodo
+export default UpdateTodo
